@@ -1,4 +1,4 @@
-from pywebhdfs.webhdfs import PyWebHdfsClient
+from gavialwebhdfs.webhdfs import PyWebHdfsClient
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
@@ -11,9 +11,12 @@ example_data = '01010101010101010101010101010101010101010101\n'
 rename_dir = 'user/hdfs/example_rename'
 
 
-# create a new client instance
+# create a new client instance, auth by  user_name
 hdfs = PyWebHdfsClient(host='localhost', port='50070',
                        user_name='hduser')
+# create a new client instance,auth by accesskey
+#hdfs2 = PyWebHdfsClient(host='localhost', port='80',
+#                      accesskey='abd0103086bc4daea7db072853b00f9f')
 
 # create a new directory for the example
 print('making new HDFS directory at: {0}\n'.format(example_dir))

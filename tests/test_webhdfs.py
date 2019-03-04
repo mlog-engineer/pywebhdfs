@@ -5,9 +5,9 @@ import types
 from mock import MagicMock
 from mock import patch
 
-from pywebhdfs import errors
-from pywebhdfs.webhdfs import PyWebHdfsClient, _raise_pywebhdfs_exception
-from pywebhdfs import operations
+from gavialwebhdfs import errors
+from gavialwebhdfs.webhdfs import PyWebHdfsClient, _raise_pywebhdfs_exception
+from gavialwebhdfs import operations
 
 from requests.sessions import Session
 

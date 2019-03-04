@@ -1,9 +1,28 @@
 CHANGES
 =======
 
+* Updated AUTHORS
+* Mock HTTP verbs of session of object for all test cases
+* Initial approach to mocking requests.Session to fix unit tests
+* Send all requests through a Session instance
+* Set default timeout of 2 minutes for all requests
+* removed unnecssary comment
+* PEP8
+* implemented streaming file
+* Check whether configured namenodes are up before continuing with CRUD operations
+
+0.4.2
+-----
+
+* add accesskey auth support
+* change name to gavialwebhdfs
+
+0.4.1
+-----
+
 * update AUTHORS
-* Restored host and port fields in PyWebHDFSClient. They are not used internally anymore, but are a visible part of the API, so cannot be removed
-* Fixed error in default value of request_extra_opts
+* Restored host and port fields in PyWebHDFSClient.  They are not used internally anymore, but are a visible part of the API, so cannot be removed
+* Fixed error in default value of request\_extra\_opts
 * Added support for general base URIs and extra options for REST requests
 * Set default timeout to None instead of 0
 * update .gitignore
@@ -14,12 +33,12 @@ CHANGES
 * correct setup.cfg
 * Add test coverage for extended attributes, update README for extended attribtues
 * Add HDFS extended attribute support
-* added exists_file_dir
+* added exists\_file\_dir
 * allow paths with leading '/'
 * Add timeout to requests call
 * pass stylecheck
 * resolve conflicts
-* Extract method: _resolve_host
+* Extract method: \_resolve\_host
 * Define custom exceptions for HA and federation
 * Return the result of the rename operation
 * Added wrapper for GETCONTENTSUMMARY
@@ -50,13 +69,13 @@ CHANGES
 * Ensure destination path contains a leading slash
 * URL encode query parameters
 * Support HDFS paths with unicode characters
-* Bump version after last pull request
+* Bump version after last  pull request
 * version bumo, authors file, comments
 * fixed unittest code
 * I fixed performance of operation to large file
 * update version for new release 0.2.2
-* do not pass file_data to name node
-* Changed append_file() to use content type application/octet-stream
+* do not pass file\_data to name node
+* Changed append\_file() to use content type application/octet-stream
 * version bump
 * added unit test for header in create file 'content-type': 'application/octet-stream', added AUTHORS file, pep8
 * Fix for WebHDFS API complaint during create file operation: Data upload requests must have content-type set to 'application/octet-stream
@@ -67,7 +86,7 @@ CHANGES
 * Update README.md
 * setup changes, link to pypi
 * correct spelling error
-* change to example code, and create_file return value
+* change to example code, and create\_file return value
 * removing print statement from unit tests
 * remove temp function
 * adding unit tests

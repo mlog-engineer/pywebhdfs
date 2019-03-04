@@ -1,6 +1,6 @@
 import unittest
 
-from pywebhdfs.webhdfs import errors
+from gavialwebhdfs.webhdfs import errors
 
 
 class WhenTestingErrors(unittest.TestCase):

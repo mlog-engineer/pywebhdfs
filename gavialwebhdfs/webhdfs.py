@@ -7,7 +7,7 @@ try:
 except ImportError:
     from urllib import quote, quote_plus
 
-from pywebhdfs import errors, operations
+from gavialwebhdfs import errors, operations
 
 
 class PyWebHdfsClient(object):
@@ -16,10 +16,11 @@ class PyWebHdfsClient(object):
 
     To use this client:
 
-    >>> from pywebhdfs.webhdfs import PyWebHdfsClient
+    >>> from gavialwebhdfs.webhdfs import PyWebHdfsClient
     """
 
     def __init__(self, host='localhost', port='50070', user_name=None,
+                 accesskey=None,
                  path_to_hosts=None, timeout=120,
                  base_uri_pattern="http://{host}:{port}/webhdfs/v1/",
                  request_extra_opts={}):
@@ -48,6 +49,7 @@ class PyWebHdfsClient(object):
         self.host = host
         self.port = port
         self.user_name = user_name
+        self.accesskey = accesskey
         self.timeout = timeout
         self.session = requests.Session()
         self.path_to_hosts = path_to_hosts
@@ -695,6 +697,9 @@ class PyWebHdfsClient(object):
         if self.user_name:
             auth_param = '&user.name={user_name}'.format(
                 user_name=self.user_name)
+        if self.accesskey:
+            auth_param = '&accesskey={accesskey}'.format(
+                accesskey=self.accesskey)
 
         # setup any optional parameters
         keyword_params = str()
@@ -740,7 +745,6 @@ class PyWebHdfsClient(object):
                 response = req_func(uri, allow_redirects=allow_redirect,
                                     timeout=self.timeout,
                                     **self.request_extra_opts)
-
                 if not _is_standby_exception(response):
                     _move_active_host_to_head(hosts, host)
                     return response
