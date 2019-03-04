@@ -1,6 +1,7 @@
 CHANGES
 =======
 
+* Refact refact to support gavial platform accesskey auth
 * Updated AUTHORS
 * Mock HTTP verbs of session of object for all test cases
 * Initial approach to mocking requests.Session to fix unit tests
@@ -10,12 +11,6 @@ CHANGES
 * PEP8
 * implemented streaming file
 * Check whether configured namenodes are up before continuing with CRUD operations
-
-0.4.2
------
-
-* add accesskey auth support
-* change name to gavialwebhdfs
 
 0.4.1
 -----
